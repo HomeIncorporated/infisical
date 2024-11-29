@@ -35,7 +35,7 @@ export const queryClient = new QueryClient({
               text: (
                 <div>
                   <p>Please check the input and try again.</p>
-                  <p className="mt-2 text-xs">Request ID: {serverResponse.requestId}</p>
+                  <p className="mt-2 text-xs">Request ID: {serverResponse.reqId}</p>
                 </div>
               ),
               children: (
@@ -78,7 +78,7 @@ export const queryClient = new QueryClient({
               title: "Forbidden Access",
               type: "error",
 
-              text: `${serverResponse.message} [requestId=${serverResponse.requestId}]`,
+              text: `${serverResponse.message} [requestId=${serverResponse.reqId}]`,
               children: serverResponse?.details?.length ? (
                 <Modal>
                   <ModalTrigger>
@@ -174,7 +174,7 @@ export const queryClient = new QueryClient({
         createNotification({
           title: "Bad Request",
           type: "error",
-          text: `${serverResponse.message} [requestId=${serverResponse.requestId}]`
+          text: `${serverResponse.message} [requestId=${serverResponse.reqId}]`
         });
       }
     }
